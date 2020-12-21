@@ -20,7 +20,8 @@ def frame_to_leds(frame):
     if not strip:
         return 
     for i, value in enumerate(frame):
-        strip.setPixelColor(i, value)
+        r,g,b = value
+        strip.setPixelColor(i, Color(r,g,b))
         strip.show()
 
 '''
