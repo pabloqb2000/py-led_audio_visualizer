@@ -1,4 +1,5 @@
 from rpi_ws281x import *
+import numpy as np
 
 # LED strip configuration:
 LED_COUNT      = 16      # Number of LED pixels.
