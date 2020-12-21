@@ -17,6 +17,7 @@ strip = None
     Lights the leds based on this colors
 '''
 def frame_to_leds(frame):
+    frame = frame.astype(np.uint32)
     if not strip:
         return 
     for i, value in enumerate(frame):
