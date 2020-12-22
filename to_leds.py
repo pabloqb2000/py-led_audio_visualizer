@@ -18,7 +18,6 @@ strip = None
     Lights the leds based on this colors
 '''
 def frame_to_leds(frame):
-    frame = frame.astype(np.uint32)
     if not strip:
         return 
     for i, value in enumerate(frame):
@@ -33,5 +32,6 @@ def frame_to_leds(frame):
 strip = Adafruit_NeoPixel(LED_COUNT, LED_PIN, LED_FREQ_HZ, LED_DMA, LED_INVERT, LED_BRIGHTNESS, LED_CHANNEL)
 # Intialize the library (must be called once before other functions).
 strip.begin()
-
+# Set all pixels to 0 at start
+frame_to_leds(np.zeros(LED_COUNT, 3))
     
