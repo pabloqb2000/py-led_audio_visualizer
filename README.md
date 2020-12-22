@@ -7,6 +7,7 @@ For building this proyect I used:
 - Matplotlib: for visualizing the audio results
 - cv2: to generate the resuliting videos
 - colour: for conversions between colours
+- rpi_ws281x: to control the led strip
 
 ## Volume animations
 Volume animations are made based on the volume of the signal in the .wav file.</br>
