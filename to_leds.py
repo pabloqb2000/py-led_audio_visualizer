@@ -33,5 +33,5 @@ strip = Adafruit_NeoPixel(LED_COUNT, LED_PIN, LED_FREQ_HZ, LED_DMA, LED_INVERT, 
 # Intialize the library (must be called once before other functions).
 strip.begin()
 # Set all pixels to 0 at start
-frame_to_leds(np.zeros(LED_COUNT, 3))
+frame_to_leds(np.zeros((LED_COUNT, 3)))
     
