@@ -8,7 +8,7 @@ c1, c2 = Color('#fceaa8'), Color('#00e5ff')
 c3, c4 = Color('#000000'), Color('#000000')
 gradient_mode = 'hsl'
 n_points = 100
-anim_mode = 'fft 2000 8192 1'
+anim_mode = 'volume_bar bounce'
 fps = 30
 
 out_file = './npys/song01.npy' # will still be a .avi file
