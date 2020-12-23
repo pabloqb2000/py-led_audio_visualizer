@@ -7,7 +7,6 @@ For building this proyect I used:
 - Matplotlib: for visualizing the audio results
 - cv2: to generate the resuliting videos
 - colour: for conversions between colours
-- tqdm: for making progress bars
 - rpi_ws281x: to control the led strip (<a href="https://github.com/jgarff/rpi_ws281x">from this repo</a>)
 
 ## Volume animations

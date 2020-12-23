@@ -1,6 +1,7 @@
 from colour import Color
 from utils.animation_maker import *
 import numpy as np
+from time import time
 
 song = 1
 in_file = f'./Songs/Song0{song}.wav'
@@ -15,6 +16,9 @@ fps = 30
 
 out_file = f'./npys/song0{song}.npy' # will still be a .avi file
 
+t1 = time()
 point_values = make_animation(in_file, anim_mode, n_points, fps, c1, c2, c3, c4, gradient_mode)
 
 np.save(out_file, point_values)
+
+print(f"Took {time() - t1} secs")
