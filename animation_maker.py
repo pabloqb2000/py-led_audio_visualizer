@@ -1,4 +1,5 @@
 import numpy as np
+from tqdm import tqdm
 from colour import Color
 from audio_reader import *
 from gradient_utils import *
@@ -149,7 +150,7 @@ def volume_full_bar_animation(signal, n_frames, n_points, gradient, pow=1):
     point_values = np.zeros((n_frames, n_points, 3))
     grad_size = len(gradient) - 1
 
-    for vol, points in zip(signal, point_values):
+    for vol, points in tqdm(zip(signal, point_values)):
         color = gradient[int(np.power(vol, pow)*grad_size)]
         points[:] = np.tile(color, (n_points, 1))
     
@@ -163,7 +164,7 @@ def volume_beam_animation(signal, n_frames, n_points, gradient, pow=1):
     point_values = np.zeros((n_frames, n_points, 3))
     grad_size = len(gradient) - 1
 
-    for i, vol in enumerate(signal):
+    for i, vol in tqdm(enumerate(signal)):
         last_frame = point_values[i-1]
         frame = point_values[i]
         frame[1:] = last_frame[:-1]
@@ -181,7 +182,7 @@ def volume_bar_animation(signal, n_frames, n_points, gradient, simetric, bounce_
     bounce = 0
 
     if not simetric:
-        for vol, points in zip(signal, point_values):
+        for vol, points in tqdm(zip(signal, point_values)):
             bar_size = int(np.round(vol*n_points))
             color = gradient[int(vol*grad_size)]
             points[:bar_size] = np.tile(color, (bar_size, 1))
@@ -193,7 +194,7 @@ def volume_bar_animation(signal, n_frames, n_points, gradient, simetric, bounce_
                 points[bounce] = color
                     
     else: 
-        for vol, points in zip(signal, point_values):
+        for vol, points in tqdm(zip(signal, point_values)):
             bar_size = int(np.floor(vol*n_points/2))
             start = int(n_points/2)
             color = gradient[int(vol*grad_size)]
