@@ -1,5 +1,5 @@
 from colour import Color
-from animation_maker import *
+from utils.animation_maker import *
 import numpy as np
 
 song = 1

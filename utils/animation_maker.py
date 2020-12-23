@@ -1,8 +1,8 @@
 import numpy as np
 from tqdm import tqdm
 from colour import Color
-from audio_reader import *
-from gradient_utils import *
+from utils.audio_reader import *
+from utils.gradient_utils import *
 
 '''
     Creates an animation based on the animation mode string

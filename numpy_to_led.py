@@ -1,6 +1,6 @@
 from colour import Color
-from to_leds import *
-from animation_maker import *
+from utils.to_leds import *
+from utils.animation_maker import *
 from time import time, sleep
 
 in_file = './npys/song01.npy'

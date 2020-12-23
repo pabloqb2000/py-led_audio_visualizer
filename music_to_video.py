@@ -1,6 +1,6 @@
 from colour import Color
-from video_maker import *
-from animation_maker import *
+from utils.video_maker import *
+from utils.animation_maker import *
 
 in_file = './Songs/Song02.wav'
 c1, c2 = Color('#fceaa8'), Color('#00e5ff')
