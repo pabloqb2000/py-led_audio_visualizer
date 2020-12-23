@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Title -->
+    <title>Led web</title>
+    <!-- Icon -->
+    <link rel="icon" type="image/png" href="./imgs/logo.png">
+    
+  </head>
+  <body class="">
+    <div class="container">
+        <!-- Header -->
+        <div class="my-5 text-center">
+            <img src="imgs/logo.png" alt="Pol logo" width="120" height="120">
+            <h1 class="display-4">Led web</h1>
+        </div>
+        <!-- Navbar -->
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Main</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Led strip</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ledring.html">Led ring</a>
+            </li>
+          </ul>
+          
+          <!-- Content -->
+          <div class="row mt-3">
+            <h1>Led strip config</h1>
+          </div>
+
+          <div class="row mt-3">
+            <!-- Single color -->
+            <div class="col-md-4">
+              <div class="card my-3" id="singleCard" onclick="cardClicked(this.id)">
+                <h3 class="card-header">Single color</h3>
+                <div class="card-body">
+                  <label for="singleColor1">Color</label>
+                  <div class="input-color-container mx-3 col-4">
+                    <input type="color" name="singleColor1" id="singleColor1" value="#8080ff">
+                  </div>
+                  <div class="mr-2 my-3">
+                    <div class="form-check form-switch">
+                      <input class="form-check-input" type="checkbox" id="blinkChkBox" onclick="enablerClicked(this.id)">
+                      <label class="form-check-label" for="blinkChkBox">Blink</label>
+                    </div>
+                    <div class="form-check form-switch">
+                      <input class="form-check-input" type="checkbox" id="oddChkBox1">
+                      <label class="form-check-label" for="oddChkBox1">Only odd</label>
+                    </div>
+                  </div>
+                  <div class="my-3">
+                    <div class="col-6">
+                      <label for="blinkSpeedRange" class="form-label">Blink speed</label>
+                      <input type="range" class="form-range" id="blinkSpeedRange" disabled>
+                    </div>
+                    <div>
+                      <button type="button" class="btn btn-primary" onclick="sendData('singleCard')">Send</button>
+                    </div> 
+                  </div>
+                </div>      
+              </div>          
+          </div>
+
+          <!-- double color gradient -->
+          <div class="col-md-4">
+            <div class="card my-3" id="doubleCard" onclick="cardClicked(this.id)">
+              <h3 class="card-header">Double color gradient</h3>
+              <div class="card-body">
+                <label for="doubleColor1">Colors</label>
+                <div class="row">
+                  <div class="input-color-container mx-3 col-4">
+                    <input type="color" name="doubleColor1" id="doubleColor1" value="#8080ff">
+                  </div>
+                  <div class="input-color-container col-4">
+                    <input type="color" name="doubleColor2" id="doubleColor2" value="#ffdf80">
+                  </div>
+                </div>
+                <div class="mr-2 my-3">
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="cicleChkBox1" onclick="enablerClicked(this.id)">
+                    <label class="form-check-label" for="cicleChkBox1">Cicle</label>
+                  </div>
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="oddChkBox2">
+                    <label class="form-check-label" for="oddChkBox2">Only odd</label>
+                  </div>
+                </div>
+                <div class="my-3">
+                  <div class="col-6">
+                    <label for="cicleSpeedRange1" class="form-label">Cicle speed</label>
+                    <input type="range" class="form-range" id="cicleSpeedRange1" disabled>
+                  </div>
+                </div>
+                <div>
+                  <button type="button" class="btn btn-primary" onclick="sendData('doubleCard')">Send</button>
+                </div>  
+              </div>
+            </div>
+          </div>
+
+          <!-- triple color gradient -->
+          <div class="col-md-4">
+            <div class="card my-3" id="tripleCard" onclick="cardClicked(this.id)">
+              <h3 class="card-header">Triple color gradient</h3>
+              <div class="card-body">
+                <label for="tripleColor1">Colors</label>
+                <div class="row">
+                  <div class="input-color-container mx-3 col-4">
+                    <input type="color" name="tripleColor1" id="tripleColor1" value="#8080ff">
+                  </div>
+                  <div class="input-color-container col-4">
+                    <input type="color" name="tripleColor2" id="tripleColor2" value="#ffdf80">
+                  </div>
+                  <div class="input-color-container mx-3 col-4">
+                    <input type="color" name="tripleColor3" id="tripleColor3" value="#8080ff">
+                  </div>
+                </div>
+                <div class="mr-2 my-3">
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="cicleChkBox2" onclick="enablerClicked(this.id)">
+                    <label class="form-check-label" for="cicleChkBox2">Cicle</label>
+                  </div>
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="oddChkBox3">
+                    <label class="form-check-label" for="oddChkBox3">Only odd</label>
+                  </div>
+                </div>
+                <div class="my-3">
+                  <div class="col-6">
+                    <label for="cicleSpeedRange2" class="form-label">Cicle speed</label>
+                    <input type="range" class="form-range" id="cicleSpeedRange2" disabled>
+                  </div>
+                </div>
+                <div>
+                  <button type="button" class="btn btn-primary" onclick="sendData('tripleCard')">Send</button>
+                </div>   
+              </div>
+            </div>
+          </div>
+
+          <!-- rainbow gradient -->
+          <div class="col-md-6">
+            <div class="card my-3" id="rainbowCard" onclick="cardClicked(this.id)">
+              <h3 class="card-header">Rainbow gradient</h3>
+              <div class="card-body">
+                <div class="mb-3">
+                  <div class="col-6">
+                    <label for="rainbowSizeRange" class="form-label">Rainbow size</label>
+                    <input type="range" class="form-range" id="rainbowSizeRange">
+                  </div>
+                </div>
+                <div class="mr-2 my-3">
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="cicleChkBox3" onclick="enablerClicked(this.id)">
+                    <label class="form-check-label" for="cicleChkBox3">Cicle</label>
+                  </div>
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="oddChkBox4">
+                    <label class="form-check-label" for="oddChkBox4">Only odd</label>
+                  </div>
+                </div>
+                <div class="my-3">
+                  <div class="col-6">
+                    <label for="cicleSpeedRange3" class="form-label">Cicle speed</label>
+                    <input type="range" class="form-range" id="cicleSpeedRange3" disabled>
+                  </div>
+                </div>
+                <div>
+                  <button type="button" class="btn btn-primary" onclick="sendData('rainbowCard')">Send</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- bnw gradient -->
+          <div class="col-md-6">
+            <div class="card my-3" id="bnwCard" onclick="cardClicked(this.id)">
+              <h3 class="card-header">Black and white gradient</h3>
+              <div class="card-body">
+                <div class="mb-3">
+                  <div class="col-6">
+                    <label for="bnwSizeRange" class="form-label">Black and whitew size</label>
+                    <input type="range" class="form-range" id="bnwSizeRange">
+                  </div>
+                </div>
+                <div class="mr-2 my-3">
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="cicleChkBox4" onclick="enablerClicked(this.id)">
+                    <label class="form-check-label" for="cicleChkBox4">Cicle</label>
+                  </div>
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="oddChkBox5">
+                    <label class="form-check-label" for="oddChkBox5">Only odd</label>
+                  </div>
+                </div>
+                <div class="my-3">
+                  <div class="col-6">
+                    <label for="cicleSpeedRange4" class="form-label">Cicle speed</label>
+                    <input type="range" class="form-range" id="cicleSpeedRange4" disabled>
+                  </div>
+                </div>
+                <div>
+                  <button type="button" class="btn btn-primary" onclick="sendData('bnwCard')">Send</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Foot navbar-->
+          <ul class="nav nav-pills mt-5 mb-3">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Main</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Led strip</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ledring.html">Led ring</a>
+            </li>
+          </ul>
+    </div>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="script.js"></script>
+
+  </body>
+</html>

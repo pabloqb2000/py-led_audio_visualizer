@@ -1,0 +1,17 @@
+.input-color-container {
+    position: relative;
+    overflow: hidden;
+    width: 40px;
+    height: 40px;
+    border: solid 3px #e6e6e6;
+    border-radius: 40px;
+  }
+  
+ input[type=color] {
+    position: absolute;
+    right: -8px;
+    top: -8px;
+    width: 60px;
+    height: 60px;
+    border: none;
+  }
