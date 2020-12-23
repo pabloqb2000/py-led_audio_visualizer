@@ -1,6 +1,6 @@
 from colour import Color
-from video_maker import *
 from animation_maker import *
+import numpy as np
 
 song = 1
 in_file = f'./Songs/Song0{song}.wav'
