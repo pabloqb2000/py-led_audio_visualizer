@@ -12,7 +12,7 @@ For building this proyect I used:
 ## Volume animations
 Volume animations are made based on the volume of the signal in the .wav file.</br>
 The signal is averaged using a hamming window, as show in:</br>
-<img src="plots/Volume_linear_convolution.png"></img>
+<img src="plots/Volume_linear_convolution.png">
 Where the blue and orange lines are the channels of the song</br>
 The green line is the result of the average </br>
 The red line is the result of discretacing the green line for a 30 fps video</br>
@@ -26,7 +26,7 @@ This animations depend on more values such as:
 - The maximum frequency
 - Some interpolation parameters</br>
 You can see the value of the leds based on these fft in here:
-<img src="plots/leds_Trim.gif"></img></br>
+<img src="plots/leds_Trim.gif"></br>
 One of the animations that can be created using this is the following
-<img src="videos/fft_led.gif"></img>
+<img src="videos/fft_led.gif">
 
