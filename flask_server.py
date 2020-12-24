@@ -1,6 +1,6 @@
 from flask import Flask, render_template
 import socket
-# from utils.to_leds import *
+from utils.to_leds import *
 from colour import Color
 import numpy as np
 
@@ -22,7 +22,7 @@ def ledring():
 def color_action(colors, blit, odds, speed):
 	print(f"Colors: {colors} blit: {blit} odds: {odds} speed: {speed}")
 	r,g,b = Color('#' + colors[:6]).rgb
-	print(np.full((100, 3), (int(r*255), int(g*255), int(b*255))))
+	frame_to_leds(np.full((100, 3), (int(r*255), int(g*255), int(b*255))))
 	return render_template('ledstrip.html')
 
 '''@app.route("/<deviceName>/<action>")
