@@ -52,4 +52,4 @@ def action(deviceName, action):
 
 if __name__ == "__main__":
     ip = socket.gethostbyname(socket.gethostname())
-    app.run(host='192.168.1.119', port=80, debug=True)
+    app.run(host='0.0.0.0', port=80, debug=True)
