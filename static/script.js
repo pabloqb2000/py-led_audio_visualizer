@@ -13,7 +13,7 @@ function sendData(cardId) {
             data += "/" + cInput.checked;
         } else if (cInput.type == "color"){
             isColor = true;
-            data += cInput.value;
+            data += cInput.value.slice(1);
         } else  {
             data += "/" + cInput.value;
         }

@@ -1,21 +1,31 @@
 from flask import Flask, render_template
 import socket
+# from utils.to_leds import *
+from colour import Color
+import numpy as np
 
 app = Flask(__name__)
 
 @app.route("/")
-def hello():
-   now = datetime.datetime.now()
-   timeString = now.strftime("%Y-%m-%d %H:%M")
+def index():
+	return render_template('index.html')
 
-   templateData = {
-      'title' : 'HELLO!',
-      'time': timeString
-    }
+@app.route("/ledstrip.html")
+def ledstrip():
+	return render_template('ledstrip.html')
 
-   return render_template('index.html', **templateData)
+@app.route("/ledring.html")
+def ledring():
+	return render_template('ledring.html')
 
-@app.route("/<deviceName>/<action>")
+@app.route("/color/<colors>/<blit>/<odds>/<speed>")
+def color_action(colors, blit, odds, speed):
+	print(f"Colors: {colors} blit: {blit} odds: {odds} speed: {speed}")
+	r,g,b = Color('#' + colors[:6]).rgb
+	print(np.full((100, 3), (int(r*255), int(g*255), int(b*255))))
+	return render_template('ledstrip.html')
+
+'''@app.route("/<deviceName>/<action>")
 def action(deviceName, action):
 	if deviceName == 'ledRed':
 		actuator = ledRed
@@ -38,7 +48,7 @@ def action(deviceName, action):
               'ledYlw'  : ledYlwSts,
               'ledGrn'  : ledGrnSts,
 	}
-	return render_template('index.html', **templateData)
+	return render_template('index.html', **templateData)'''
 
 if __name__ == "__main__":
     ip = socket.gethostbyname(socket.gethostname())
